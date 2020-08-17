@@ -1,0 +1,14 @@
+policies:
+  - name: lambda-tag
+    resource: lambda
+    actions:
+      - type: tag
+        key: "Owner"
+        value: "Bob"
+
+  - name: lambda-tag-org
+    resource: lambda
+    actions:
+      - type: tag
+        key: "Org"
+        value: "AWS.GCR.GA.SA"

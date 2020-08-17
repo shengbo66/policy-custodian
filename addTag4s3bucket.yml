@@ -1,0 +1,22 @@
+policies:
+  - name: CheckForPublicAclBlock-on
+    resource: s3
+    region: cn-north-1
+    filters:
+      - type: check-public-block
+        BlockPublicAcls: true
+    actions:
+      - type: tag
+        key: "Owner"
+        value: "Bob"
+
+  - name: CheckForPublicAclBlock-Off
+    resource: s3
+    region: cn-north-1
+    filters:
+      - type: check-public-block
+        BlockPublicAcls: false
+    actions:
+      - type: tag
+        key: "Owner"
+        value: "Bob"
